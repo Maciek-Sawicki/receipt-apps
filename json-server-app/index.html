@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage Receipt</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <h1>Receipt</h1>
+        <div id="receipt">
+            <table>
+                <thead>
+                    <tr>
+                        <th>No.</th>
+                        <th>Name</th>
+                        <th>Quantity</th>
+                        <th>Price (PLN)</th>
+                        <th>Item Total (PLN)</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody> </tbody>
+            </table>
+        </div>
+        <button id="addItemButton">Add item</button>
+    </div>
+    <dialog id="itemDialog">
+        <form method="dialog" id="itemForm">
+            <label for="itemName">Name:</label>
+            <input type="text" id="itemName" name="name" required>
+            <label for="itemQuantity">Quantity:</label>
+            <input type="number" id="itemQuantity" name="quantity" min="1" required>
+            <label for="itemPrice">Price (PLN):</label>
+            <input type="number" id="itemPrice" name="price" step="0.01" min="0.01" required>
+            <div class="dialog-buttons">
+                <button type="submit">Accept</button>
+                <button type="button" id="cancelButton">Cancel</button>
+            </div>
+        </form>
+    </dialog>
+    <dialog id="deleteDialog">
+        <form method="dialog" id="deleteForm">
+            <p>Are you sure you want to delete this item?</p>
+            <div class="dialog-buttons">
+                <button type="submit">Yes</button>
+                <button type="button" id="cancelDeleteButton">No</button>
+            </div>
+        </form>
+    </dialog>
+    <dialog id="editDialog">
+        <form method="dialog" id="editForm">
+            <label for="editItemName">Name:</label>
+            <input type="text" id="editItemName" name="name" required>
+            <label for="editItemQuantity">Quantity:</label>
+            <input type="number" id="editItemQuantity" name="quantity" min="1" required>
+            <label for="editItemPrice">Price (PLN):</label>
+            <input type="number" id="editItemPrice" name="price" step="0.01" min="0.01" required>
+            <div class="dialog-buttons">
+                <button type="submit">Accept</button>
+                <button type="button" id="cancelEditButton">Cancel</button>
+            </div>
+        </form>
+    </dialog>
+
+    <script src="script.js"></script>
+</body>
+</html>
